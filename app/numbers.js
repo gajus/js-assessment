@@ -15,6 +15,10 @@ define(function() {
     },
 
     multiply: function(a, b) {
+    	// or just this, considering that neither of the multipliers is smaller than 0.0000000000001
+    	//return parseFloat((a * b).toPrecision(12));
+    
+    	// I bet there is a nicer way to do it.
 		var getMultiplier = function (a) {
 			var fraction = (a + '').split('.');
 			return fraction[1] ? Math.pow(10, fraction[1].length) : 1;
